@@ -1,10 +1,13 @@
 var gulp = require("gulp"); // Load Gulp!
-// Now that we've installed the uglify package we can require it:
-var uglify = require("gulp-uglify"),
+    uglify = require("gulp-uglify"),
     rename = require("gulp-rename"),
     eslint = require("gulp-eslint");
     browserSync = require('browser-sync').create();
-    // sass = require('gulp-sass');
+    
+    sass = require("gulp-sass"),
+    autoprefixer = require("gulp-autoprefixer"),
+    cssnano = require("gulp-cssnano"),
+    rename = require("gulp-rename");
 
 gulp.task('scripts', function () {
     return gulp
