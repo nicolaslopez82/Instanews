@@ -1,0 +1,15 @@
+$primary-colour: #333;
+
+$desktop-width: 1000px;
+
+@mixin  desktop {
+    @media (min-width: $desktop-width) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 700px) {
+        @content;        
+    }
+}

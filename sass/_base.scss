@@ -1,0 +1,14 @@
+body{
+    color: $primary-colour;
+    @include desktop(){
+        background-color: hotpink;
+        color: #666;
+    }
+}
+
+h1{
+    @include desktop(){
+        color: greenyellow;
+        font-size: 40px;
+    }
+}
