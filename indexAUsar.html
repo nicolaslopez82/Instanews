@@ -1,46 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Instanews</title>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/main.css">        
+    <script src="js/main.js" defer></script> -->
 <style>
 * {
     box-sizing: border-box;
 }
+
 .row::after {
     content: "";
     clear: both;
     display: table;
+    align-content: center;   
 }
+
 [class*="col-"] {
     float: left;
     padding: 15px;
 }
+
 html {
     font-family: "Lucida Sans", sans-serif;    
 }
-
 
 .header {
     background-color: #000000;
     color: #ffffff;
     padding: 15px;  
-    text-align: center;
+    text-align: center;    
 }
-.menu ul {
+
+.menu {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    width: 100px;
+    height: 100px;
 }
-.menu li {
-    padding: 8px;
-    margin-bottom: 7px;
-    background-color: #33b5e5;
-    color: #ffffff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-.menu li:hover {
-    background-color: #0099cc;
-}
+
 .aside {
     background-color: #33b5e5;
     padding: 15px;
@@ -49,6 +52,7 @@ html {
     font-size: 14px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
+
 .footer {
     background-color: #000000;
     color: #ffffff;
@@ -58,29 +62,71 @@ html {
 }
 
 .grid-container {
-  display: grid;
+  display: none;
   grid-column-gap: 0px;
   grid-template-columns: auto;
   background-color: #000000;
 }
 
 .grid-item {
+  opacity: .5;
+  transition: opacity .5s ease-out;
   background-color: rgba(255, 255, 255, 1);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 10px;
   font-size: 20px;
   text-align: center;
 }
 
+.grid-item:hover {
+  opacity: 1;
+}
+
+.module {
+  margin: 0px;
+  width: 100%;
+  height: 300px;
+  float: left;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/shoes.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+h4 {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 4px 8px;
+  text-align: justify;
+  color: white;
+  margin: 0;
+  font: 10px Sans-Serif;
+}
+
+.opp h4 {
+  background: rgba(102, 102, 102, 0.9);
+  color: rgba(228, 225, 225, 0.6);
+}
+
 .news-img-logo {    
     width: 100%;
-    height: 100%;   
+    height: 130%;   
   }
+
+  h3 {
+    font-size: 1em;
+  }
+
+.sections{
+  border-radius: 20px;
+  width: 50%;
+}
 
 /* For mobile phones: */
 [class*="col-"] {
     width: 100%;        
 }
+
 @media only screen and (min-width: 600px) {
     /* For tablets: */
     .col-s-1 {width: 8.33%;}
@@ -95,9 +141,22 @@ html {
     .col-s-10 {width: 83.33%;}
     .col-s-11 {width: 91.66%;}
     .col-s-12 {width: 100%;}
-    .header{text-align: left;}
-    .grid-container{grid-template-columns: auto auto auto;}
+    .header{text-align: center;}
+    .grid-container{
+      grid-template-columns: auto auto auto;
+      display: none;
+    }
+    .sections{width: 20%;}
+    .footer{
+      text-align: center;    
+      font-size: 10px;
+    }
+    .news-img-logo {    
+      width: 100%;
+      height: 100%;
+    }
 }
+
 @media only screen and (min-width: 768px) {
     /* For desktop: */
     .col-1 {width: 8.33%;}
@@ -113,7 +172,20 @@ html {
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
     .header{text-align: left;}
-    .grid-container{grid-template-columns: auto auto auto auto;}
+    .grid-container{
+      grid-template-columns: auto auto auto auto;
+      display: none;
+    }
+    .sections{width: 20%;}
+    .footer{
+      text-align: left;
+      padding-left: 50px;
+      font-size: 10px;
+    }
+    .news-img-logo {    
+      width: 100%;
+      height: 100%;
+    }
 }
 </style>
 </head>
@@ -123,70 +195,73 @@ html {
 
   <div class="row">
 
-    <div class="col-4 col-s-4 menu">
-      <img class="news-img-logo" src="https://pmcvariety.files.wordpress.com/2013/08/t_logo_2048_black.png?w=1000&h=563&crop=1" alt="nyt-logo">
+    <div class="col-2 col-s-2 menu">
+      <img class="news-img-logo" src="images/nyt-logo.png" alt="nyt-logo">
     </div>
 
-    <div class="col-8 col-s-11">
-      <h1>Choose a section</h1>
-      <select name="cars" size="0">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="fiat">Fiat</option>
-        <option value="audi">Audi</option>
+    <div class="col-8 col-s-9">
+      <h3>Choose a section</h3>
+
+      <select class="sections" id="sections">
+          <option selected="selected">Sections... </option>
+          <option>Slower</option>
+          <option>Slow</option>
+          <option>Medium</option>
+          <option>Fast</option>
+          <option>Faster</option>
       </select>
     </div>
   </div>
 </div>
 
 
-<div class="grid-container">
-              <div class="grid-item">
-                <h3>Column 1</h3>
-                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRLocgF4_FkVwwwZ0DnzG_oY-j0a3ETd9pk4NmWCuw1Ojb3JSE" alt="news-article">
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+<div class="grid-container" id="idGridContainer">
+              <div class="grid-item">                
+                  <div class="module opp">
+                    <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
+                  </div>                  
               </div>
 
-              <div class="grid-item">
-                <h3>Column 2</h3>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRLocgF4_FkVwwwZ0DnzG_oY-j0a3ETd9pk4NmWCuw1Ojb3JSE" alt="news-article">
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+              <div class="grid-item">                
+                  <div class="module opp">
+                    <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
+                  </div>                  
               </div>
 
-              <div class="grid-item">
-                <h3>Column 3</h3>        
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRLocgF4_FkVwwwZ0DnzG_oY-j0a3ETd9pk4NmWCuw1Ojb3JSE" alt="news-article">
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-              </div>
-              
-              <div class="grid-item">
-                <h3>Column 4</h3>
-                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRLocgF4_FkVwwwZ0DnzG_oY-j0a3ETd9pk4NmWCuw1Ojb3JSE" alt="news-article">
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+              <div class="grid-item">                
+                  <div class="module opp">
+                    <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
+                  </div>                  
               </div>
 
-              <div class="grid-item">
-                <h3>Column 5</h3>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRLocgF4_FkVwwwZ0DnzG_oY-j0a3ETd9pk4NmWCuw1Ojb3JSE" alt="news-article">
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+              <div class="grid-item">                
+                  <div class="module opp">
+                    <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
+                  </div>                  
               </div>
 
-              <div class="grid-item">
-                <h3>Column 6</h3>        
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRLocgF4_FkVwwwZ0DnzG_oY-j0a3ETd9pk4NmWCuw1Ojb3JSE" alt="news-article">
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-              </div>
-              
-              <div class="grid-item">
-                <h3>Column 7</h3>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRLocgF4_FkVwwwZ0DnzG_oY-j0a3ETd9pk4NmWCuw1Ojb3JSE" alt="news-article">
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+              <div class="grid-item">                
+                  <div class="module opp">
+                    <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
+                  </div>                  
               </div>
 
-              <div class="grid-item">
-                <h3>Column 8</h3>        
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRLocgF4_FkVwwwZ0DnzG_oY-j0a3ETd9pk4NmWCuw1Ojb3JSE" alt="news-article">
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+              <div class="grid-item">                
+                  <div class="module opp">
+                    <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
+                  </div>                  
+              </div>
+
+              <div class="grid-item">                
+                  <div class="module opp">
+                    <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
+                  </div>                  
+              </div>
+
+              <div class="grid-item">                
+                  <div class="module opp">
+                    <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
+                  </div>                  
               </div>
 </div>
 
@@ -194,6 +269,27 @@ html {
 <div class="footer">
   <p>&#169 Copyright 2018 INSTANEWS</p>
 </div>
+
+
+<!-- JQuery by my project: -->
+    <script src="vendor/js/jquery-3.3.1.min.js"></script>
+
+<script type="text/javascript">
+      $(document).ready(function() {
+        
+        $('#sections').change(function() {
+          
+          $(".grid-container").show( 800 );
+          $(".grid-container").css({"display": "grid"});             
+        });
+
+        $("#sections").change(function() {          
+          var valueSelected = $('#sections').find(":selected").text();
+          //alert(valueSelected);
+        } );
+    });
+
+</script>
 
 </body>
 </html>

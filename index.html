@@ -1,91 +1,109 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Instanews</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"> -->
-    <link href="https://fonts.googleapis.com/css?family=Lobster|Raleway" rel="stylesheet">
+
+<head>
+  <title>Instanews</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/font.css">
-    <link rel="stylesheet" href="css/main.css">        
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <!--<header>
-      <a href="#" alt="our company" class="logo">
-      <img src="https://pmcvariety.files.wordpress.com/2013/08/t_logo_2048_black.png?w=1000&h=563&crop=1" alt="Our Logo" class="logo-img">
-		  <div class="logo text-dropdown">
-			<label for="#dropbtn" class="logo-text">Choose a section</h1>					
-		  
-			<div class="dropdown ">
-			  <button class="dropbtn" id="dropbtn">Sections...</button>
-			  <div class="dropdown-content">
-				<a href="#">Link 1</a>
-				<a href="#">Link 2</a>
-				<a href="#">Link 3</a>
-			  </div>	
-			</div>
-		<div>
-	</a>
-    </header> -->
-	
-	<header>   
-        <div class="header_div">
-            <img class="aloha_logo" src="https://pmcvariety.files.wordpress.com/2013/08/t_logo_2048_black.png?w=1000&h=563&crop=1" alt="Aloha Logo">
-            <nav class="header_navigation">
-                <ul>
-                    <li><a href="index.html#footer">About</a></li>
-                    <li><a href="index.html#shop">Shop</a></li>                    
-                </ul>
-            </nav>            
-        </div>
-    </header>
-	
-    <main class="main">
- 
-      <figure class="news">
-         <img class="news-img" src="https://cdn.colorlib.com/shapely/wp-content/uploads/sites/12/2016/03/photo-1422568374078-27d3842ba676-1.jpg" alt="news-article">
-      </figure>
-	  <figure class="news">
-         <img class="news-img" src="https://cdn.colorlib.com/shapely/wp-content/uploads/sites/12/2016/12/photo-1447877085163-3cce903855cd-1.jpg" alt="news-article">
-      </figure>
-      <figure class="news">
-         <img class="news-img" src="https://cdn.colorlib.com/shapely/wp-content/uploads/sites/12/2016/03/photo-1449057528837-7ca097b3520c-1-1.jpg" alt="news-article">
-      </figure>
-      <figure class="news">
-         <img class="news-img" src="https://cdn.colorlib.com/shapely/wp-content/uploads/sites/12/2016/12/photo-1443890484047-5eaa67d1d630-1.jpg" alt="news-article">
-      </figure>
-      <figure class="news">
-         <img class="news-img" src="https://cdn.colorlib.com/shapely/wp-content/uploads/sites/12/2016/03/photo-1449057528837-7ca097b3520c-1-1.jpg" alt="news-article">
-      </figure>
-      <figure class="news">
-         <img class="news-img" src="https://cdn.colorlib.com/shapely/wp-content/uploads/sites/12/2016/03/photo-1447834353189-91c48abf20e1-1-1.jpg" alt="news-article">
-      </figure>
-      <figure class="news">
-         <img class="news-img" src="https://cdn.colorlib.com/shapely/wp-content/uploads/sites/12/2016/03/photo-1447958374760-1ce70cf11ee3-1-1.jpg" alt="news-article">
-      </figure>
-      <figure class="news">
-         <img class="news-img" src="https://cdn.colorlib.com/shapely/wp-content/uploads/sites/12/2016/03/photo-1449057528837-7ca097b3520c-1-1.jpg" alt="news-article">
-      </figure>
-	  <figure class="news">
-         <img class="news-img" src="https://cdn.colorlib.com/shapely/wp-content/uploads/sites/12/2016/12/photo-1447877085163-3cce903855cd-1.jpg" alt="news-article">
-      </figure>
-      <figure class="news">
-         <img class="news-img" src="https://cdn.colorlib.com/shapely/wp-content/uploads/sites/12/2016/03/photo-1447958374760-1ce70cf11ee3-1-1.jpg" alt="news-article">
-      </figure>
-	  <figure class="news">
-         <img class="news-img" src="https://cdn.colorlib.com/shapely/wp-content/uploads/sites/12/2016/03/photo-1447834353189-91c48abf20e1-1-1.jpg" alt="news-article">
-      </figure>
-	  <figure class="news">
-         <img class="news-img" src="https://cdn.colorlib.com/shapely/wp-content/uploads/sites/12/2016/12/photo-1443890484047-5eaa67d1d630-1.jpg" alt="news-article">
-      </figure>
-    </main>
-    <aside class="sidebar"></aside>    
-	<footer class="footer">
-            <p>&#169 Copyright 2018 INSTANEWS</p>        
-    </footer>
-  </body>
-</html>
+    <link rel="stylesheet" href="css/main.css">            
+</head>
 
+<body>
+
+  <div class="header">
+
+    <div class="row">
+
+      <div class="col-2 col-s-2 menu">
+        <img class="news-img-logo" src="images/nyt-logo.png" alt="nyt-logo">
+      </div>
+
+      <div class="col-8 col-s-9">
+        <h3>Choose a section</h3>
+
+        <select class="sections" id="sections">
+          <option selected="selected">Sections... </option>
+          <option>Slower</option>
+          <option>Slow</option>
+          <option>Medium</option>
+          <option>Fast</option>
+          <option>Faster</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="grid-container" id="idGridContainer">
+    <div class="grid-item">
+      <div class="module opp">
+        <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver
+          Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <div class="module opp">
+        <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver
+          Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <div class="module opp">
+        <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver
+          Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <div class="module opp">
+        <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver
+          Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <div class="module opp">
+        <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver
+          Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <div class="module opp">
+        <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver
+          Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <div class="module opp">
+        <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver
+          Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <div class="module opp">
+        <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver
+          Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="footer">
+    <p>&#169 Copyright 2018 INSTANEWS</p>
+  </div>
+
+  <!-- JQuery by my project: -->
+  <script src="vendor/js/jquery-3.3.1.min.js"></script>
+    
+  <!-- Include javascript main for project-2 -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
