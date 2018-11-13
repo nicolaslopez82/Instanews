@@ -106,17 +106,15 @@ html {
     position: absolute;
     bottom: 0px;
     left: 0px;
-    right: 0px;
-    background: rgba(0, 0, 0, 0.75);
+    right: 0px;    
     padding: 4px 8px;
     text-align: justify;
     color: white;
     margin: 0;
-    font: 10px Sans-Serif;
+    font: 15px Sans-Serif;
   }
   
-  .opp .caption{
-    background: rgba(102, 102, 102, 0.9);
+  .opp .caption{    
     color: rgba(228, 225, 225, 0.6);
   }
 
