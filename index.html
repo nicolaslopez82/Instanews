@@ -5,13 +5,14 @@
   <title>Instanews</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-git.js"></script>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/main.css">            
 </head>
 
 <body>
-
+<form action="#" id="album-search">
   <div class="header">
 
     <div class="row">
@@ -19,88 +20,33 @@
       <div class="col-2 col-s-2 menu">
         <img class="news-img-logo" src="images/nyt-logo.png" alt="nyt-logo">
       </div>
-
+      
       <div class="col-8 col-s-9">
         <h3>Choose a section</h3>
 
         <select class="sections" id="sections">
           <option selected="selected">Sections... </option>
-          <option>Slower</option>
-          <option>Slow</option>
-          <option>Medium</option>
-          <option>Fast</option>
-          <option>Faster</option>
+          <option>molotov</option>
+          <option>nirvana</option>
+          <option>sports</option>
+          <option>national</option>
+          <option>technology</option>
         </select>
       </div>
     </div>
   </div>
+</form>
 
+<div class="grid-container" id="gc">
+</div>  
+  
 
-  <div class="grid-container" id="idGridContainer">
-    <div class="grid-item">
-      <div class="module opp">
-        <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver
-          Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
-      </div>
-    </div>
-
-    <div class="grid-item">
-      <div class="module opp">
-        <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver
-          Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
-      </div>
-    </div>
-
-    <div class="grid-item">
-      <div class="module opp">
-        <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver
-          Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
-      </div>
-    </div>
-
-    <div class="grid-item">
-      <div class="module opp">
-        <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver
-          Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
-      </div>
-    </div>
-
-    <div class="grid-item">
-      <div class="module opp">
-        <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver
-          Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
-      </div>
-    </div>
-
-    <div class="grid-item">
-      <div class="module opp">
-        <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver
-          Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
-      </div>
-    </div>
-
-    <div class="grid-item">
-      <div class="module opp">
-        <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver
-          Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
-      </div>
-    </div>
-
-    <div class="grid-item">
-      <div class="module opp">
-        <h4>Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver
-          Running Shoes and Water for raining days in Vancouver Running Shoes and Water for raining days in Vancouver</h4>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="footer">
+  <div class="footer" id="footer">
     <p>&#169 Copyright 2018 INSTANEWS</p>
   </div>
 
   <!-- JQuery by my project: -->
-  <script src="vendor/js/jquery-3.3.1.min.js"></script>
+  <script src="vendor/js/jquery-3.3.1.min.js"></script>  
     
   <!-- Include javascript main for project-2 -->
   <script src="js/main.js"></script>
