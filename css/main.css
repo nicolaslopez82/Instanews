@@ -71,18 +71,19 @@ html {
 
 .grid-container {
     display: none;
-    grid: auto / auto auto auto auto;
+    grid: auto / auto;
     grid-gap: 1px;
     background-color: #000000;
     grid-auto-flow: row;
     padding: 5px;
   }
+
   .grid-container>div {
     opacity: .5;
     transition: opacity .5s ease-out;
     background-color: rgba(255, 255, 255, 1);
     /*font-size: 20px;*/
-    height: 25vw;
+    height: 75vw;
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
@@ -115,7 +116,8 @@ html {
   }
   
   .opp .caption{    
-    color: rgba(228, 225, 225, 0.6);
+    /*color: rgba(228, 225, 225, 0.6);*/
+    color: white;
   }
 
 .news-img-logo {    
@@ -154,9 +156,11 @@ html {
     .col-s-12 {width: 100%;}
     .header{text-align: center;}
     .grid-container{
-      grid-template-columns: auto auto auto;
+      /*grid-template-columns: auto auto auto;*/
+      grid: auto / auto auto auto ;
       display: none;
     }
+    .grid-container>div {height: 55vw;}
     .sections{width: 20%;}
     .footer{
       text-align: center;    
@@ -184,9 +188,11 @@ html {
     .col-12 {width: 100%;}
     .header{text-align: left;}
     .grid-container{
-      grid-template-columns: auto auto auto auto;
+      /*grid-template-columns: auto auto auto auto;*/
+      grid: auto / auto auto auto auto;
       display: none;
     }
+    .grid-container>div {height: 25vw;}
     .sections{width: 20%;}
     .footer{
       text-align: left;
