@@ -1,14 +1,11 @@
 
 $(document).ready(function () {
 
-    //$('#sections').click(function () {
-        loadOptions();
-    //});
+    //Load section options dropdown.
+    loadOptions();
+
     // Changes about layout.
     $('#sections').change(function () {
-
-        
-
         $("#gc").css({ "display": "grid" });        
         $("#gc").show(800);                      
         $("#footer").css({ "height": "100px" });
@@ -25,7 +22,7 @@ $(document).ready(function () {
         e.preventDefault();
         
         valueSelected = $('#sections').find(":selected").text();
-               
+        //$('#gc').empty();
 
         var url = "https://api.nytimes.com/svc/topstories/v2/" + valueSelected + ".json";
         url += '?' + $.param({
@@ -37,19 +34,19 @@ $(document).ready(function () {
           method: 'GET',
         }).done(function(data) {
         
-          console.log(data);	             
-          //$('#gc').empty();                     
-          let resultSize = data.results.length;
+          console.log(data);	                                                      
           let count = 0;
           let results = data.results;             
                                                                                        
             $.each(results, function (index, value) {   
-                if(count < resultSize){
+                if(count < 12){
                     let div = $('<div><h4 class="caption">' + value.title + '</h4>' + '</div>').addClass('module opp');
                     $(div).attr("id","item"+count);                    
                     $('#item'+count).css('background-image', 'url(' + value.multimedia[1].url + ')');                    
                     count++;
                     $('#gc').append(div);                                                             
+                }else{
+                    return false;
                 }                                           
             });			 
         }).fail(function(err) {
