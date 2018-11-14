@@ -10,7 +10,7 @@ $(document).ready(function () {
         $("#gc").show(800);                      
         $("#footer").css({ "height": "100px" });
         $("#footer").css({ "vertical-align": "baseline" });
-        //$('#gc').empty();
+        $('#gc').empty();
     });    
 
     //NYT API AJAX
