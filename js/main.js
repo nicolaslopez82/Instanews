@@ -1,9 +1,9 @@
 
 $(document).ready(function () {
 
-    $('#sections').click(function () {
+    //$('#sections').click(function () {
         loadOptions();
-    });
+    //});
     // Changes about layout.
     $('#sections').change(function () {
 
