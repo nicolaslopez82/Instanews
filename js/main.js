@@ -40,7 +40,7 @@ $(document).ready(function () {
                                                                                        
             $.each(results, function (index, value) {   
                 if(count < 12){
-                    let div = $('<div><h4 class="caption">' + value.title + '</h4>' + '</div>').addClass('module opp');
+                     div = $('<div><h4 class="caption">' + value.title + '</h4>' + '</div>').addClass('module opp');
                     $(div).attr("id","item"+count);                    
                     $('#item'+count).css('background-image', 'url(' + value.multimedia[1].url + ')');                    
                     count++;
