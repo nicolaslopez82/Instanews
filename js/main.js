@@ -1,44 +1,43 @@
 
-$(document).ready(function () {
+$(document).ready(() => {
 
     //Load section options dropdown.
     loadOptions();
 
     // Changes about layout.
-    $('#sections').change(function () {
+    $('#sections').change(() => {
         $("#gc").css({ "display": "grid" });        
         $("#gc").show(800);                      
         $("#footer").css({ "height": "100px" });
-        $("#footer").css({ "vertical-align": "baseline" });
-        //$('#gc').empty();
+        $("#footer").css({ "vertical-align": "baseline" });        
     });    
 
     //NYT API AJAX
-    var apiKey = "e39450d32dde4bd6bb9f9b190ef0ecd3";
-    var valueSelected = null;
+    const apiKey = "e39450d32dde4bd6bb9f9b190ef0ecd3";
+    let valueSelected = null;
 
     //Load of news.
-    $('#sections').on('change', function (e) {
+    $('#sections').on('change', (e) => {
         e.preventDefault();
         
         valueSelected = $('#sections').find(":selected").text();
         $('#gc').empty();
 
-        var url = "https://api.nytimes.com/svc/topstories/v2/" + valueSelected + ".json";
+        let url = "https://api.nytimes.com/svc/topstories/v2/" + valueSelected + ".json";
         url += '?' + $.param({
-          'api-key': "e39450d32dde4bd6bb9f9b190ef0ecd3"
+          'api-key': apiKey
         });              
         
         $.ajax({
           url: url,
           method: 'GET',
-        }).done(function(data) {
+        }).done((data) => {
         
           console.log(data);	                                                      
           let count = 0;
           let results = data.results;             
                                                                                        
-            $.each(results, function (index, value) {   
+            $.each(results, (index, value) => {   
                 if(count < 12){
                     div = $('<div><h4 class="caption">' + value.title + '</h4>' + '</div>').addClass('module opp');
                     div.attr("id","item"+count);                    
@@ -49,7 +48,7 @@ $(document).ready(function () {
                     return false;
                 }                                           
             });			 
-        }).fail(function(err) {
+        }).fail((err) => {
             $('#gc').html('Sorry, article not found.')
           throw err;
         });
@@ -57,17 +56,15 @@ $(document).ready(function () {
     });
 
     function loadOptions(){
-        var sectionList = ['Sections...', 'home', 'opinion', 'world', 'national', 'politics', 'upshot', 
+        const sectionList = ['Sections...', 'home', 'opinion', 'world', 'national', 'politics', 'upshot', 
                            'nyregion', 'business', 'technology', 'science', 'health', 'sports', 'arts',
                             'books', 'movies', 'theater', 'sundayreview', 'fashion', 'tmagazine', 'food',
                            'travel', 'magazine', 'realestate', 'automobiles', 'obituaries', 'insider', ];
 
         sectionList.forEach(element => {            
             $('#sections').append('<option>' + element + '</option>');
-        });
-        
+        });        
     }
-
 });
 
 
