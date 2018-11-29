@@ -9,9 +9,13 @@
   "author": "nicolaslopez82",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.26.3",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0",
     "gulp-cssnano": "^2.1.3",
     "gulp-eslint": "^5.0.0",
     "gulp-rename": "^1.4.0",
