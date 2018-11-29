@@ -2,18 +2,21 @@ var gulp = require("gulp"); // Load Gulp!
     uglify = require("gulp-uglify"),
     rename = require("gulp-rename"),
     eslint = require("gulp-eslint");
-    browserSync = require('browser-sync').create();
-    
+    browserSync = require('browser-sync').create(),    
     sass = require("gulp-sass"),
     autoprefixer = require("gulp-autoprefixer"),
     cssnano = require("gulp-cssnano"),
-    rename = require("gulp-rename");
+    rename = require("gulp-rename"),
+    babel = require("gulp-babel");
 
 gulp.task('scripts', function () {
     return gulp
         .src("./js/*.js") // What files do we want gulp to consume?        
         .pipe(eslint())        
         .pipe(eslint.format())
+        .pipe(babel({
+            presets: ['env']
+        }))
         .pipe(uglify()) // Call the uglify function on these files
         .pipe(rename({ extname: ".min.js" })) // Rename the uglified file
         .pipe(gulp.dest("./build/js")); // Where do we put the result?

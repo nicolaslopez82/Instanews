@@ -22,7 +22,7 @@ $(document).ready(function () {
         e.preventDefault();
         
         valueSelected = $('#sections').find(":selected").text();
-        //$('#gc').empty();
+        $('#gc').empty();
 
         var url = "https://api.nytimes.com/svc/topstories/v2/" + valueSelected + ".json";
         url += '?' + $.param({
@@ -40,9 +40,9 @@ $(document).ready(function () {
                                                                                        
             $.each(results, function (index, value) {   
                 if(count < 12){
-                     div = $('<div><h4 class="caption">' + value.title + '</h4>' + '</div>').addClass('module opp');
-                    $(div).attr("id","item"+count);                    
-                    $('#item'+count).css('background-image', 'url(' + value.multimedia[1].url + ')');                    
+                    div = $('<div><h4 class="caption">' + value.title + '</h4>' + '</div>').addClass('module opp');
+                    div.attr("id","item"+count);                    
+                    div.css('background-image', 'url(' + value.multimedia[1].url + ')');                    
                     count++;
                     $('#gc').append(div);                                                             
                 }else{
