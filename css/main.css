@@ -14,9 +14,18 @@
     padding: 15px;
 }
 
-html {
-    font-family: "Lucida Sans", sans-serif;    
-    height: 100%;
+html {    
+    height: 100%;    
+}
+
+body {
+  line-height: 1;
+  font-family: 'Open Sans';    
+  height: 100%;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 16px;
+  color: #ffffff;
 }
 
 .header {
@@ -56,7 +65,7 @@ html {
 }
 
 .grid-item {
-  opacity: .5;
+  opacity: 1;
   transition: opacity .5s ease-out;
   background-color: rgba(255, 255, 255, 1);
   /*font-size: 20px;*/
@@ -64,10 +73,6 @@ html {
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-}
-
-.grid-item:hover {
-  opacity: 1;
 }
 
 .grid-container {
@@ -79,27 +84,19 @@ html {
     padding: 5px;
   }
 
-  .grid-container>div {
-    opacity: .5;
-    transition: opacity .5s ease-out;
-    background-color: rgba(255, 255, 255, 1);
-    /*font-size: 20px;*/
+  .grid-container>div {       
     height: 75vw;
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
   }
-  
-  .grid-container>div:hover {
-    opacity: 1;
-  }
+
   
   .module {
     margin: 0px;
     width: 100%;
     height: 300px;
-    float: left;
-    /*background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/shoes.jpg);*/
+    float: left;    
     background-size: cover;
     position: relative;
   }
@@ -112,13 +109,16 @@ html {
     padding: 4px 8px;
     text-align: justify;
     color: white;
-    margin: 0;
-    font: 15px Sans-Serif;
+    background-color: rgba(12, 12, 12, 0.4);
+    margin: 0;            
+    font-family: 'Open Sans'; 
+    font-weight: 300;
+    font-style: normal;
   }
   
-  .opp .caption{    
-    /*color: rgba(228, 225, 225, 0.6);*/
+  .opp .caption{        
     color: white;
+    opacity: 1;
   }
 
 .news-img-logo {    

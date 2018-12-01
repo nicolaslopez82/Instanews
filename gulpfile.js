@@ -9,6 +9,9 @@ var gulp = require("gulp"); // Load Gulp!
     rename = require("gulp-rename"),
     babel = require("gulp-babel");
 
+    var os = require('os');
+    var open = require('gulp-open');
+
 gulp.task('scripts', function () {
     return gulp
         .src("./js/*.js") // files that gulp consume.
@@ -58,6 +61,31 @@ gulp.task('watch', function(){
     gulp.watch('js/*.js', gulp.series('scripts'));
     gulp.watch('index.html', gulp.series('scripts'));    
 });
+/*
+// Default usage:
+// Open one file with default application
+gulp.task('open', function(){
+    gulp.src('./index.html')
+    .pipe(open());
+  });
+
+  var browser = os.platform() === 'linux' ? 'google-chrome' : (
+    os.platform() === 'darwin' ? 'google chrome' : (
+    os.platform() === 'win32' ? 'chrome' : 'firefox'));
+
+    gulp.task('browser', function(){
+        gulp.src('./index.html')
+        .pipe(open({app: browser}));
+      });
+
+gulp.task('app', function(){
+    var options = {
+        uri: 'localhost:3000',
+        app: 'chrome'
+    };
+    gulp.src(__filename)
+    .pipe(open(options));
+});*/
 
 // Default Task
-gulp.task('default', gulp.series('scripts', gulp.parallel('browser-sync', 'watch')));
+gulp.task('default', gulp.series('scripts', gulp.parallel('browser-sync', 'watch'/*, 'open', 'browser'*/)));
