@@ -32,13 +32,12 @@ $(document).ready(() => {
           url: url,
           method: 'GET',
         }).done((data) => {
-        
-          console.log(data);	                                                      
           let count = 0;
           let results = data.results;             
                                                                                        
             $.each(results, (index, value) => {   
                 if(count < 12){
+                    let div = null;
                     div = $('<div><h4 class="caption">' + value.title + '</h4>' + '</div>').addClass('module opp');
                     div.attr("id","item"+count);                    
                     div.css('background-image', 'url(' + value.multimedia[1].url + ')');                    
