@@ -34,11 +34,18 @@ $(document).ready(() => {
         }).done((data) => {
           let count = 0;
           let results = data.results;             
-                                                                                       
+                 //console.log(data);                                                                      
             $.each(results, (index, value) => {   
-                if(count < 12){
-                    let div = null;
-                    div = $('<div><h4 class="caption">' + value.title + '</h4>' + '</div>').addClass('module opp');
+                if(count < 12){        
+
+                    let caption = null;
+                    if(value.multimedia[1].caption == ""){
+                        caption = value.title;
+                    }else{
+                        caption = value.multimedia[1].caption;
+                    }
+                    
+                    div = $('<div><h4 class="caption">' + caption + '</h4>' + '</div>').addClass('module opp');
                     div.attr("id","item"+count);                    
                     div.css('background-image', 'url(' + value.multimedia[1].url + ')');                    
                     count++;
@@ -64,6 +71,11 @@ $(document).ready(() => {
             $('#sections').append('<option>' + element + '</option>');
         });        
     }
+
+    $(".caption").on("click",function() {
+        $(this).fadeOut("fast");
+      });
+
 });
 
 
