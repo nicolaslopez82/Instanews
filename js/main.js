@@ -8,7 +8,7 @@ $(document).ready(() => {
     $('#sections').change(() => {
         $("#gc").css({ "display": "grid" });        
         $("#gc").show(800);                      
-        $("#footer").css({ "height": "100px" });
+        $("#footer").css({ "height": "100%" });
         $("#footer").css({ "vertical-align": "baseline" });        
     });    
 
@@ -51,12 +51,12 @@ $(document).ready(() => {
                     div.attr("id","item"+count);                    
                     div.css('background-image', 'url(' + value.multimedia[4].url + ')');                    
                     count++;
-                    $('#gc').append(div);                                                             
+                    $('#gc').append(div);                                                                                 
                 }else{
                     return false;
-                }                    
-                
+                }                                    
                 $('#loading').hide();
+                $("#footer").css({ "height": "100px" });
             });			 
         }).fail((err) => {
             $('#gc').html('Sorry, article not found.')
