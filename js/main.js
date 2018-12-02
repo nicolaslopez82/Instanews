@@ -19,6 +19,8 @@ $(document).ready(() => {
     //Load of news.
     $('#sections').on('change', (e) => {
         e.preventDefault();
+
+        $('#loading').show();
         
         valueSelected = $('#sections').find(":selected").text();
         $('#gc').empty();
@@ -52,7 +54,9 @@ $(document).ready(() => {
                     $('#gc').append(div);                                                             
                 }else{
                     return false;
-                }                                           
+                }                    
+                
+                $('#loading').hide();
             });			 
         }).fail((err) => {
             $('#gc').html('Sorry, article not found.')
