@@ -34,20 +34,20 @@ $(document).ready(() => {
         }).done((data) => {
           let count = 0;
           let results = data.results;             
-                 //console.log(data);                                                                      
+                 console.log(data);                                                                      
             $.each(results, (index, value) => {   
                 if(count < 12){        
 
                     let caption = null;
-                    if(value.multimedia[1].caption == ""){
+                    if(value.multimedia[4].caption == ""){
                         caption = value.title;
                     }else{
-                        caption = value.multimedia[1].caption;
+                        caption = value.multimedia[4].caption;
                     }
                     
                     div = $('<div><h4 class="caption">' + caption + '</h4>' + '</div>').addClass('module opp');
                     div.attr("id","item"+count);                    
-                    div.css('background-image', 'url(' + value.multimedia[1].url + ')');                    
+                    div.css('background-image', 'url(' + value.multimedia[4].url + ')');                    
                     count++;
                     $('#gc').append(div);                                                             
                 }else{
