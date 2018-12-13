@@ -41,17 +41,27 @@ $(document).ready(() => {
                 if(count < 12){        
 
                     let caption = null;
+
+                    //Validation for caption in null.
                     if(value.multimedia[4].caption == ""){
                         caption = value.title;
                     }else{
                         caption = value.multimedia[4].caption;
                     }
                     
-                    div = $('<div><h4 class="caption">' + caption + '</h4>' + '</div>').addClass('module opp');
-                    div.attr("id","item"+count);                    
-                    div.css('background-image', 'url(' + value.multimedia[4].url + ')');                    
+                    //Load image, description and link for each new.
+                    div = $('<div><h4 class="caption">' + caption + '</h4>' + '<a href="' + value.url + '" class="external">' + '</div>').addClass('module opp');
+                    div.attr("id","item"+count);                                 
+                    div.css('background-image', 'url(' + value.multimedia[4].url + ')');   
+                    $('.external').attr('target', '_blank');      
                     count++;
-                    $('#gc').append(div);                                                                                 
+                    $('#gc').append(div);
+
+                    //Open the new selected in a new tab. 
+                               
+                    $('.module').click(function () {
+                        window.open(value.url);
+                    });                                                                                
                 }else{
                     return false;
                 }                                    
@@ -78,8 +88,7 @@ $(document).ready(() => {
 
     $(".caption").on("click",function() {
         $(this).fadeOut("fast");
-      });
-
+      }); 
 });
 
 
