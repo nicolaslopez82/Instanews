@@ -8,10 +8,6 @@ Clicking on whatever news, another browser tab is going to be open with the full
 ![instanews](https://user-images.githubusercontent.com/6266503/52168945-b060a200-26e5-11e9-95f8-35aa6470838e.gif)
 ----
 
-## **Prerequisites**
-- A browser as Chrome, Firefox.
-----
-
 ### **Instanews was developed with the following technologies:**
 - Javascript
 - JQuery 3.1.1
@@ -26,11 +22,15 @@ Clicking on whatever news, another browser tab is going to be open with the full
 - Git / GitHub
 ----
 
+## **Prerequisites**
+- A browser as Chrome, Firefox.
+----
+
 # **Setup:**
 
-  *Download or clone the project.*
+*Download or clone the project.*
  
- *Install dependencies:*
+*Install dependencies:*
 ```> npm i```
 
 *Run locally with Webpack Dev Server:*
@@ -39,16 +39,20 @@ Clicking on whatever news, another browser tab is going to be open with the full
 *Build for production:*
 ```> npm run build```
 
- *Run with Gulp* ```gulp```
+*Run with Gulp* ```gulp```
+
 ----
 
 # **Versioning**
 - 1.0
+
 ----
 
 # **License**
 Free Software.
+
 ----
+
 # **Author**
 - Nicolas Lopez 
 - nicolaslopez82
