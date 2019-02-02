@@ -13,7 +13,8 @@ $(document).ready(() => {
     });    
 
     //NYT API AJAX
-    const apiKey = "e39450d32dde4bd6bb9f9b190ef0ecd3";
+    //const apiKey = "e39450d32dde4bd6bb9f9b190ef0ecd3";
+	const apiKey = "KmsBblecPJNYqq63HEUCCGErfmXvojSL";
     let valueSelected = null;
 
     //Load of news.
