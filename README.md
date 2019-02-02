@@ -1,33 +1,48 @@
 # RED Academy
-## Intranews App - Project 2
+## Intranews App
+
+This web page is consuming from the API provided by The New York Times. 
+The main Instanews' idea is showing the Top 12 Stories of each NYT section selected by the user. 
+Clicking on whatever news, another browser tab is going to be open with the full news.
 
 ![instanews](https://user-images.githubusercontent.com/6266503/52168945-b060a200-26e5-11e9-95f8-35aa6470838e.gif)
 
 ----
-## Prerequisites
-- Browser (Chrome, Firefox or IE).
-(TODO)
+## **Prerequisites**
+- A browser as Chrome, Firefox.
 ----
-## Installing
-- (TODO)
+## **Installing**
+Donwload the project or clone it.
+´´´npm install´´´
 ----
-### The webpage was made with the following technologies:
+### Instanews was developed with the following technologies:
 
+- Javascript
+- JQuery 3.1.1
+- AJAX
+- JSON
 - HTML5
 - CSS3
 - Flexbox
-- Javascript
-- JQuery 3.1.1
+- Font Awesome
+- Gulp
+- SASS
 - Git / GitHub
-- .gitignore
-(TODO)
 ----
-# Features:
- (TODO)
+# Setup:
+ *Install dependencies:*
+
+´´´> npm i´´´
+
+*Run locally with Webpack Dev Server:*
+
+´´´> npm start´´´
+
+*Build for production:*
+
+´´´> npm run build´´´
 ----
-# Folder structure:
- (TODO)
-----
+
 # Versioning 
 - 1.0
 ----
