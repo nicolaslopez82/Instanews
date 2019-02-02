@@ -12,10 +12,6 @@ Clicking on whatever news, another browser tab is going to be open with the full
 - A browser as Chrome, Firefox.
 ----
 
-## **Installing**
-Donwload the project or clone it.
-----
-
 ### **Instanews was developed with the following technologies:**
 - Javascript
 - JQuery 3.1.1
@@ -31,6 +27,9 @@ Donwload the project or clone it.
 ----
 
 # **Setup:**
+
+  *Download or clone the project.*
+ 
  *Install dependencies:*
 ```> npm i```
 
@@ -40,8 +39,7 @@ Donwload the project or clone it.
 *Build for production:*
 ```> npm run build```
 
-*Run with Gulp*
-```gulp```
+ *Run with Gulp* ```gulp```
 ----
 
 # **Versioning**
