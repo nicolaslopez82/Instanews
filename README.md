@@ -5,6 +5,8 @@ This web page is consuming from the API provided by The New York Times.
 The main Instanews' idea is showing the Top 12 Stories of each NYT section selected by the user. 
 Clicking on whatever news, another browser tab is going to be open with the full news.
 
+Click [here](https://nicolaslopez82.github.io/Instanews/) to see the app online.
+
 ![instanews](https://user-images.githubusercontent.com/6266503/52168945-b060a200-26e5-11e9-95f8-35aa6470838e.gif)
 ----
 
