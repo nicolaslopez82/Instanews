@@ -14,7 +14,8 @@ $(document).ready(() => {
 
     //NYT API AJAX
     //const apiKey = "e39450d32dde4bd6bb9f9b190ef0ecd3";
-	const apiKey = "KmsBblecPJNYqq63HEUCCGErfmXvojSL";
+    //const apiKey = "KmsBblecPJNYqq63HEUCCGErfmXvojSL";
+	const apiKey = "sC16HimL1tCsCV47MyFbEn8w3fnnv7mF";
     let valueSelected = null;
 
     //Load of news.
