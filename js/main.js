@@ -45,7 +45,7 @@ $(document).ready(() => {
                     let caption = null;
 
                     //Validation for caption in null.
-                    if(value.multimedia[3].caption == ""){
+                    if(value.multimedia[2].caption == ""){
                         caption = value.title;
                     }else{
                         caption = value.multimedia[4].caption;
