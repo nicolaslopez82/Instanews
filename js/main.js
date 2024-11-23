@@ -48,13 +48,13 @@ $(document).ready(() => {
                     if(value.multimedia[2].caption == ""){
                         caption = value.title;
                     }else{
-                        caption = value.multimedia[4].caption;
+                        caption = value.multimedia[2].caption;
                     }
                     
                     //Load image, description and link for each new.
                     div = $('<div><h4 class="caption">' + caption + '</h4>' + '<a href="' + value.url + '" class="external">' + '</div>').addClass('module opp');
                     div.attr("id","item"+count);                                 
-                    div.css('background-image', 'url(' + value.multimedia[4].url + ')');   
+                    div.css('background-image', 'url(' + value.multimedia[2].url + ')');   
                     $('.external').attr('target', '_blank');      
                     count++;
                     $('#gc').append(div);
