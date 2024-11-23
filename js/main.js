@@ -45,16 +45,16 @@ $(document).ready(() => {
                     let caption = null;
 
                     //Validation for caption in null.
-                    if(value.multimedia[2].caption == ""){
+                    if(value.multimedia[1].caption == ""){
                         caption = value.title;
                     }else{
-                        caption = value.multimedia[2].caption;
+                        caption = value.multimedia[1].caption;
                     }
                     
                     //Load image, description and link for each new.
                     div = $('<div><h4 class="caption">' + caption + '</h4>' + '<a href="' + value.url + '" class="external">' + '</div>').addClass('module opp');
                     div.attr("id","item"+count);                                 
-                    div.css('background-image', 'url(' + value.multimedia[2].url + ')');   
+                    div.css('background-image', 'url(' + value.multimedia[1].url + ')');   
                     $('.external').attr('target', '_blank');      
                     count++;
                     $('#gc').append(div);
